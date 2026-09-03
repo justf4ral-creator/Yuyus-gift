@@ -253,14 +253,20 @@ function playAudio() {
   if (!audio) return;
 
   setVolume(volumeSlider ? volumeSlider.value : 0.6);
-  audio.play().catch(() => {
-    document.addEventListener('pointerdown', () => {
-      audio.play().catch(() => {});
-      syncAudioUI();
-    }, { once: true });
-  });
 
-  syncAudioUI();
+  audio.play().then(() => {
+    syncAudioUI();
+  }).catch(() => {
+    syncAudioUI();
+  });
+}
+
+function handleUserAudioUnlock() {
+  if (!audio || !audio.paused) {
+    return;
+  }
+
+  playAudio();
 }
 
 if (giftButton) {
@@ -285,6 +291,8 @@ if (audio) {
 nextButtons.forEach((button) => {
   decorateButton(button);
   button.addEventListener('click', () => {
+    handleUserAudioUnlock();
+
     if (currentPage < pages.length - 1) {
       showPage(currentPage + 1);
     } else {
@@ -298,8 +306,10 @@ if (giftCover) {
   giftCover.classList.remove('hidden');
 }
 
+document.addEventListener('pointerdown', handleUserAudioUnlock, { passive: true });
+document.addEventListener('keydown', handleUserAudioUnlock, { passive: true });
+
 setupVisualizer();
 setVolume(volumeSlider ? volumeSlider.value : 0.6);
 syncAudioUI();
-playAudio();
 
