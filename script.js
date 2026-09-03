@@ -298,14 +298,22 @@ const unlockAudioOnFirstClick = () => {
 
 if (giftCover) {
   giftCover.addEventListener('click', () => {
-    unlockAudioOnFirstClick();
+    if (audio) {
+      audio.volume = 0.6;
+      if (volumeSlider) volumeSlider.value = '0.6';
+      audio.play().catch(() => {});
+    }
     openGift();
   });
 }
 
 if (giftButton) {
   giftButton.addEventListener('click', () => {
-    unlockAudioOnFirstClick();
+    if (audio) {
+      audio.volume = 0.6;
+      if (volumeSlider) volumeSlider.value = '0.6';
+      audio.play().catch(() => {});
+    }
     openGift();
   });
 }
