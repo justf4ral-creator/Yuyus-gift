@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Gift</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="denia.gif" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio id="bg-music" autoplay loop preload="auto">
+      <source src="amores-lejanos.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="music-panel" aria-label="Music controls">
+      <div class="visualizer" aria-hidden="true">
+        <span class="bar" style="--i: 0"></span>
+        <span class="bar" style="--i: 1"></span>
+        <span class="bar" style="--i: 2"></span>
+        <span class="bar" style="--i: 3"></span>
+        <span class="bar" style="--i: 4"></span>
+        <span class="bar" style="--i: 5"></span>
+        <span class="bar" style="--i: 6"></span>
+        <span class="bar" style="--i: 7"></span>
+        <span class="bar" style="--i: 8"></span>
+        <span class="bar" style="--i: 9"></span>
+        <span class="bar" style="--i: 10"></span>
+        <span class="bar" style="--i: 11"></span>
+        <span class="bar" style="--i: 12"></span>
+        <span class="bar" style="--i: 13"></span>
+      </div>
+
+      <div class="music-controls">
+        <button id="toggle-audio" class="audio-toggle" type="button" aria-label="Pause music">Pause</button>
+
+        <label class="volume-wrap" for="volume-slider">
+          <span>Volume</span>
+          <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.6" />
+        </label>
+      </div>
+    </div>
+
+    <div class="gift-cover" aria-live="polite">
+      <button class="gift-card envelope-card" type="button" aria-label="Open birthday envelope">
+        <span class="envelope-flap"></span>
+        <span class="envelope-paper"></span>
+        <span class="envelope-badge" aria-hidden="true">★</span>
+        <span class="envelope-label">Para Yuyu 🇩🇪 </span>
+      </button>
+    </div>
+
+    <main class="story">
+      <section class="page" data-page="0">
+        <div class="card purple-card">
+          <p class="tag">Heil Hitler</p>
+          <h1>Dove</h1>
+          <div class="image-wrap square">
+            <img src="denia.gif" alt="Yuyu´s Birthday " />
+          </div>
+          <p class="message">
+            Cree esto para dejarte un bonito recuerdo de cumpleaños, eres una persona muy especial para nosotros asi que se me ocurrio juntar a las personas que tu aprecias y quieres mas, aprecio y amo mucho tu amistad y espero seamos amigos por mucho tiempo, reirme contigo de chistes nazis y burlarnos de los estupidos judios, me alegra mucho tenerte como amigo, eres muy vegano a veces y me encanta molestarte mandandote videos de comida tqm mucho a pesar de que seas gay Muak.
+          </p>
+          <button class="next-btn" type="button">Pide un deseo</button>
+        </div>
+      </section>
+
+      <section class="page" data-page="1">
+        <div class="card keven-card">
+          <p class="tag">Heil Hitler</p>
+          <h1>Keven</h1>
+          <div class="image-wrap square">
+            <img src="keven.jpg" alt="A warm smiling moment" />
+          </div>
+          <p class="message">
+            Feliz cumpleaños pe perra yuzuru espero que sigas cumpliendo muchos más amigo pásala bonito y espero que algún día te vistas de Neko Kawai 🥳🥳🔥 jajaj bendiciones🫂
+          </p>
+          <button class="next-btn" type="button">No seas gordito</button>
+        </div>
+      </section>
+
+      <section class="page" data-page="2">
+        <div class="card blue-card">
+          <p class="tag">Heil Hitler</p>
+          <h1>koko</h1>
+          <div class="image-wrap square">
+            <img src="koko.jpg" alt="Kind and loving moment" />
+          </div>
+          <p class="message">
+            ! Feliz cumple bot!
+
+Sabes.... Estos días no ha sido muy fácil para mi pero siempre estás tú, y me alegras el día con un solo mensaje tuyo, eres una persona fantástica  que ilumina mis peores momentos y lo valoro mucho...
+
+Espero que en este dia tan especial te la pases superrr bien, que este dia este lleno de risas y momentos inolvidables.,
+
+Me Alegra haberte conocido eres de los pocos amigos con los q puedo confiar y espero que tu también confies en mi
+
+Espero Que pases un buen cumpleaños rodeado de tu familia y amigos espero Que cumplas todas tus metas eres un increible amigo nunca dejes q alguien apague tu brillo ni te haga sentir mal
+
+Pasalala bonito te quiere kokito ❤️
+          </p>
+          <button class="next-btn" type="button">Vegano</button>
+        </div>
+      </section>
+
+      <section class="page" data-page="3">
+        <div class="card mumu-card">
+          <p class="tag">Heil Hitler</p>
+          <h1>mumu</h1>
+          <div class="image-wrap square">
+            <img src="Catler.gif" alt="Beautiful memory portrait" />
+          </div>
+          <p class="message">
+            Hail Hitler y feliz  cumpleaños yuzuru tu sabes que eres el unico staff de gw2 que me cayo bien y no es gruumer tqm pásala bonito y también unas de las personas más importantes en mi vida y por último espero seguir traumándote con los videos de negros mostrando su culo aceitados
+
+          </p>
+          <button class="next-btn" type="button">Ya casi pe</button>
+        </div>
+      </section>
+
+      <section class="page" data-page="4">
+        <div class="card rakku-card">
+          <p class="tag">Heil Hitler</p>
+          <h1>Rakku</h1>
+          <div class="image-wrap square">
+            <img src="rakku.jpg" alt="Happy mood and sparkle" />
+          </div>
+          <p class="message">
+            Feliz cumpleaños pe, crece grande y fuerte para sacar toda el agua de tu casa inundada
+          </p>
+          <button class="next-btn" type="button">Te queremos mucho</button>
+        </div>
+      </section>
+
+      <section class="page" data-page="5">
+        <div class="card mery-card">
+          <p class="tag">Heil Hitler</p>
+          <h1>Mery</h1>
+          <div class="image-wrap square">
+            <img src="mery.jpg" alt="Joyful celebration portrait" />
+          </div>
+          <p class="message">
+            ¡Feliz cumpleaños, Yuzuru!  
+ I hope this new year of your life brings you lots of happiness, success, good health, and unforgettable moments. Keep being the amazing person you are, and may all your dreams and goals come true. Enjoy your special day GAY NIGGA EPSTEIN >~<
+HAIL HITLER 🙋🏻
+          </p>
+          <button class="next-btn" type="button">Bienvenido a la grita del invocador</button>
+        </div>
+      </section>
+
+      <section class="page" data-page="6">
+        <div class="card blue-card">
+          <p class="tag">Heil Hitler</p>
+          <h1>houtaro</h1>
+          <div class="image-wrap square">
+            <img src="houtaro.jpg" alt="Warm and kind portrait" />
+          </div>
+          <p class="message">
+            ¡Hola, Yuzuru! Feliz cumpleaños 🎉
+
+Sé que últimamente hemos estado bastante distantes y que las cosas entre nosotros no han sido sencillas después de lo que pasó hace tiempo. No estoy muy seguro de cómo están las cosas hoy en día o de qué piensas al respecto, pero de verdad quería escribirte para desearte un excelente día.
+llevamos más de 7 años de conocernos y sé que mantenemos una amistad verdadera que valoro . Por todo ese tiempo compartiendo juntos, para mí sigues siendo un amigo
+Ojalá la pases genial hoy con tu familia y amigos, que te consientan mucho y que este nuevo año de vida te traiga salud, éxito y momentos muy felices.
+          </p>
+          <button class="next-btn" type="button">Hitler esta orgulloso de ti</button>
+        </div>
+      </section>
+
+      <section class="page" data-page="7">
+        <div class="card akku-card">
+          <p class="tag">Heil Hitler</p>
+          <h1>Akku</h1>
+          <div class="image-wrap square">
+            <img src="akku.jpg" alt="Sweet cheerful smile" />
+          </div>
+          <p class="message">
+            Que bueno que celebres un año más de tu miserable vida.
+Espero que dejes de ser tan pendejo, y que con la edad, tus neuronas mejoren.
+Ya en serio. Feliz cumpleaños Yuzuru, es bueno celebrar un año más de tu vida. Aprovecha el tiempo, disfruta lo que más gustas hacer, cumple tus proyectos, sueños, y cuida mucho de tu salud mental y física. Para que dures más años siendo igual de pendejo.
+Me hace feliz que sigas vivo, así seas un pendejo.
+Aquí pondré una de las imágenes más épicas y significativas que tú mismo elegiste cuando te lo pedí. Como olvidar un momento tan icónico. Cuando aún eras un sol, y tenías apenas 17 añitos (según tu porque no me acuerdo). Y ya vas a cumplir 21. Que gei. Espero sean más años.
+          </p>
+          <button class="next-btn" type="button">No llores ok?</button>
+        </div>
+      </section>
+
+      <section class="page" data-page="8">
+        <div class="card white-card">
+          <p class="tag">Heil Hitler</p>
+          <h1>Manolo</h1>
+          <div class="image-wrap square">
+            <img src="manolo.gif" alt="A special final message" />
+          </div>
+          <p class="message">
+            Con cariño manolo te mando una bomba de Hiroshima
+          </p>
+          <button class="next-btn" type="button">Los judios no te ganan</button>
+        </div>
+      </section>
+
+      <section class="page" data-page="9">
+        <div class="card taih-card">
+          <p class="tag">Heil Hitler</p>
+          <h1>taih</h1>
+          <div class="image-wrap square">
+            <img src="taih.jpg" alt="Final birthday celebration" />
+          </div>
+          <p class="message"> 
+            —𖦹˙ . ꒷ 🍰 .˙Feliz cumpleaños Yuzuru˙ . ꒷ 🍰 . 𖦹˙— 
+
+ ❀ Sé que no hablamos mucho pero quiero que sepas que eres una de las mejores personas que he podido conocer en Discord. ❀
+
+✮ En este día especial, te deseo todo lo mejor y que sepas que todo lo bueno que te pase te lo mereces. ✮
+
+:pinkstar: Gracias por ser como eres, por tu amistad y por demostrarme que en este mundo aún hay personas bonitas en las que podemos confiar. Haces que el mundo sea un poco mejor. :pinkstar: 
+
+ .ᐟ <𝟑 La verdad no se como arreglar tus problemas, pero quiero que sepas que estaré aquí siempre que lo necesites. <𝟑 .ᐟ
+
+♡ Un abrazo muy fuerte, y recuerda que eres increíble. ♡
+          </p>
+          <button class="next-btn" type="button">Eres lo mejor de lo mejor </button>
+        </div>
+      </section>
+
+      <section class="page" data-page="10">
+        <div class="card vidar-card">
+          <p class="tag">Page 11</p>
+          <h1>Vidar</h1>
+          <div class="image-wrap square">
+            <img src="vidar.jpg" alt="Extra birthday surprise" />
+          </div>
+          <p class="message">
+            Para  mi pana el que mas esfuerza  (No Homo)
+          </p>
+          <button class="next-btn" type="button">Vuelta </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
