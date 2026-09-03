@@ -261,6 +261,14 @@ function playAudio() {
   });
 }
 
+function unlockGiftAudio() {
+  if (!audio) return;
+
+  setVolume(volumeSlider ? volumeSlider.value : 0.6);
+  audio.play().catch(() => {});
+  syncAudioUI();
+}
+
 function handleUserAudioUnlock() {
   if (!audio || !audio.paused) {
     return;
@@ -269,8 +277,18 @@ function handleUserAudioUnlock() {
   playAudio();
 }
 
+if (giftCover) {
+  giftCover.addEventListener('click', () => {
+    unlockGiftAudio();
+    openGift();
+  });
+}
+
 if (giftButton) {
-  giftButton.addEventListener('click', openGift);
+  giftButton.addEventListener('click', () => {
+    unlockGiftAudio();
+    openGift();
+  });
 }
 
 if (toggleAudioButton) {
