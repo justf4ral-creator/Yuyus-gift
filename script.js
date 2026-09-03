@@ -246,47 +246,66 @@ function openGift() {
   }
 
   showPage(0);
-  playAudio();
 }
 
 function playAudio() {
   if (!audio) return;
 
-  setVolume(volumeSlider ? volumeSlider.value : 0.6);
-
-  audio.play().then(() => {
-    syncAudioUI();
-  }).catch(() => {
-    syncAudioUI();
-  });
-}
-
-function unlockGiftAudio() {
-  if (!audio) return;
-
-  setVolume(volumeSlider ? volumeSlider.value : 0.6);
-  audio.play().catch(() => {});
-  syncAudioUI();
-}
-
-function handleUserAudioUnlock() {
-  if (!audio || !audio.paused) {
-    return;
+  audio.volume = 0.6;
+  if (volumeSlider) {
+    volumeSlider.value = '0.6';
   }
 
-  playAudio();
+  audio.play().then(() => {
+    if (toggleAudioButton) {
+      toggleAudioButton.textContent = 'Pause';
+      toggleAudioButton.setAttribute('aria-label', 'Pause music');
+    }
+
+    if (visualizerBars.length) {
+      visualizerBars.forEach((bar) => {
+        bar.style.height = '18px';
+        bar.style.opacity = '0.9';
+      });
+    }
+  }).catch(() => {});
 }
+
+const unlockAudioOnFirstClick = () => {
+  if (!audio) return;
+
+  audio.volume = 0.6;
+  if (volumeSlider) {
+    volumeSlider.value = '0.6';
+  }
+
+  audio.play().then(() => {
+    if (toggleAudioButton) {
+      toggleAudioButton.textContent = 'Pause';
+      toggleAudioButton.setAttribute('aria-label', 'Pause music');
+    }
+
+    if (visualizerBars.length) {
+      visualizerBars.forEach((bar) => {
+        bar.style.height = '18px';
+        bar.style.opacity = '0.9';
+      });
+    }
+
+    document.removeEventListener('click', unlockAudioOnFirstClick);
+  }).catch(() => {});
+};
 
 if (giftCover) {
   giftCover.addEventListener('click', () => {
-    unlockGiftAudio();
+    unlockAudioOnFirstClick();
     openGift();
   });
 }
 
 if (giftButton) {
   giftButton.addEventListener('click', () => {
-    unlockGiftAudio();
+    unlockAudioOnFirstClick();
     openGift();
   });
 }
@@ -309,7 +328,7 @@ if (audio) {
 nextButtons.forEach((button) => {
   decorateButton(button);
   button.addEventListener('click', () => {
-    handleUserAudioUnlock();
+    unlockAudioOnFirstClick();
 
     if (currentPage < pages.length - 1) {
       showPage(currentPage + 1);
@@ -324,10 +343,12 @@ if (giftCover) {
   giftCover.classList.remove('hidden');
 }
 
-document.addEventListener('pointerdown', handleUserAudioUnlock, { passive: true });
-document.addEventListener('keydown', handleUserAudioUnlock, { passive: true });
+document.addEventListener('click', unlockAudioOnFirstClick, { once: true });
 
 setupVisualizer();
-setVolume(volumeSlider ? volumeSlider.value : 0.6);
+audio.volume = 0.6;
+if (volumeSlider) {
+  volumeSlider.value = '0.6';
+}
 syncAudioUI();
 
